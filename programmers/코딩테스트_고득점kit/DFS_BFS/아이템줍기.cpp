@@ -1,7 +1,8 @@
-#include <string>
+#include <string.h>
 #include <vector>
 #include <queue>
 #include <climits>
+#include <iostream>
 
 using namespace std;
 
@@ -10,7 +11,8 @@ int solution(vector<vector<int>> rectangle, int characterX, int characterY, int 
     int answer = INT_MAX;
 
     bool checked[102][102] = {false};
-    int MAP[102][102] = {-1};
+    int MAP[102][102];
+    memset(MAP, -1, sizeof(MAP));
     int dirX[] = {-1, 0, 1, 0};
     int dirY[] = {0, -1, 0, 1};
 
