@@ -4,6 +4,7 @@
     "xiosbase": "cpp",
     "compare": "cpp",
     "xstddef": "cpp",
-    "xutility": "cpp"
+    "xutility": "cpp",
+    "algorithm": "cpp"
   }
 }
