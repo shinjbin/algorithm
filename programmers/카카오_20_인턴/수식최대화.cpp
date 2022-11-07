@@ -1,12 +1,11 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <list>
 #include <iostream>
 
 using namespace std;
 
-int calculate(int n1, int n2, char ch)
+long long calculate(long long n1, long long n2, char ch)
 {
     if (ch == '*')
         return n1 * n2;
@@ -40,27 +39,30 @@ long long solution(string expression)
             opers.push_back(e);
         }
     }
+    numbers.push_back(stoi(tmp));
 
     do
     {
         vector<char> tmp_opers = opers;
+        vector<long long> tmp_numbers = numbers;
+
         for (int i = 0; i < 3; i++)
         {
             char curr_oper = oper_order[i];
             int num_opers = tmp_opers.size();
             for (int j = 0; j < tmp_opers.size(); j++)
             {
-                if (opers[j] == curr_oper)
+                if (tmp_opers[j] == curr_oper)
                 {
-                    numbers[j] = numbers[j] + numbers[j + 1];
-                    numbers.erase(numbers.begin() + j + 1);
+                    tmp_numbers[j] = calculate(tmp_numbers[j], tmp_numbers[j + 1], curr_oper);
+                    tmp_numbers.erase(tmp_numbers.begin() + j + 1);
                     tmp_opers.erase(tmp_opers.begin() + j);
                     j--;
                 }
             }
         }
 
-        long long result = numbers[0];
+        long long result = tmp_numbers[0];
         if (abs(result) > answer)
             answer = abs(result);
 
