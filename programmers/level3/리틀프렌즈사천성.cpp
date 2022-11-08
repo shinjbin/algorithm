@@ -44,6 +44,7 @@ string solution(int m, int n, vector<string> board)
     // }
     char ch = 'A';
     queue<state> q;
+    q.push({});
     bool result = false;
     vector<vector<bool>> visited(m, vector<bool>(n, false));
     while (!q.empty())
