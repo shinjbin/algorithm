@@ -1,10 +1,7 @@
 {
   "files.associations": {
+    "ostream": "cpp",
     "iostream": "cpp",
-    "xiosbase": "cpp",
-    "compare": "cpp",
-    "xstddef": "cpp",
-    "xutility": "cpp",
-    "algorithm": "cpp"
+    "vector": "cpp"
   }
 }
